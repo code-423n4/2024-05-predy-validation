@@ -1,37 +1,41 @@
-# 概要
-Solidity pragmaのバージョンを固定化した方がいい
+# summary
+You should fix the version of Solidity pragma.
 
-# 問題点
-現状、各Solidityファイルには
-
-```
-pragma solidity ^0.8.17;
-```
-
-とpragmaが設定されています。
-
-この設定だと、
-・開発者やデプロイ担当者が複数存在する時
-・新しいコンパイラのバージョンがリリースされた時
-などに各々の環境でコンパイルされるバイトコードが違う状況になります。
-
-
-# 問題である理由
-環境によって動作が変わったり、不具合が発生したりしなかったりして、品質が安定しない
-
-# 具体的な対応例
+# problem
+Currently, each Solidity file contains a
 
 ```
-pragma solidity 0.8.17;
+pragma solidity ^0.8.17;.
 ```
 
-と言うように、全てのSolidityのバージョンを固定化する。
-固定化するバージョンは不具合やガスコストを考慮して、できるだけ最新のもの(2024/5現在は0.8.26)が望ましいが、
-0.8.24からデフォルトEVMがCancunになっているので、Ethereum mainnet以外にプロダクトがリリースされている場合は、デフォルトEVMを変更するか、0.8.23にして回避するか、好きな方を考慮する。
+and pragma is set.
 
-# 補足
-foundryの設定ファイルに
+With this configuration,
+
+・　When there are multiple developers and deployers
+・　When a new compiler version is released
+
+the bytecode compiled in each environment will be different.
+
+
+# Why it's a problem
+Operation may or may not change depending on the environment, and defects may or may not occur, resulting in inconsistent quality.
+
+
+# Examples of specific responses
+
+```
+pragma solidity 0.8.17;.
+```
+
+and fix all Solidity versions.
+The version to be fixed should be the latest possible (0.8.26 as of 2024/5) for defects and gas costs, though,
+The default EVM has been Cancun since 0.8.24, so if the product is released outside the Ethereum mainnet, consider changing the default EVM, or 0.8.23 to avoid, whichever you prefer.
+
+# supplement
+in foundry's configuration file.
 ```
 solc_version = "0.8.19"
 ```
-とされているので、実際には問題にならないと思いますが、まぁ全体的に統一しておいた方が品質的にはいいのかなと思ったり思わなかったり。
+so I don't think it's really a problem, but well, I think it's better for quality if we keep it consistent throughout.
+
