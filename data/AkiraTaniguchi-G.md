@@ -1,18 +1,18 @@
 # 概要
 Transient Storageを利用する
 
-# 問題点
-現状、ReentrancyGuardUpgradeableを利用して、リエントランシ~攻撃を防いでいる
+# problem
+Currently, ReentrancyGuardUpgradeable is used to prevent reentrancy attacks.
 
-# 問題である理由
-ストレージにフラグを書き込んでいるため、ガスが余計にかかる。
+# Why it's a problem
+Extra gas is required because the flags are written to storage.
 
-# 具体的な対応例
+# Examples of specific responses
 
-トランザクション実行中、一時的に利用できるTransient Storageの機能を使って対応することにより、今よりガスコストを抑えることができる
+Gas costs can be reduced by using the Transient Storage feature, which can be used temporarily during transaction execution.
 
-参考
+see
 https://soliditylang.org/blog/2024/01/26/transient-storage/
 
-# 補足
-Solidity 0.8.24からの機能になるので、利用する場合はネットワークの対応状況を確認し、必要に応じてデフォルトEVMの変更をする必要があると思います。
+# supplement
+This is a feature from Solidity 0.8.24, so if you want to use it, you will need to check the network support and change the default EVM if necessary.
