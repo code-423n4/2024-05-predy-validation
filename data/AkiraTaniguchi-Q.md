@@ -45,3 +45,8 @@ so I don't think it's really a problem, but well, I think it's better for qualit
 # 2.not check approve return value
 In the swapExactIn function of the UniswapSettlement contraption,
 ERC20.approve is executed, but the return value is not checked.
+
+# 3.Do you need ArrayLib?
+Why do you bother creating an ArrayLib instead of using an EnumerableSet?
+If you don't need it, why not just delete the ArrayLib?
+
