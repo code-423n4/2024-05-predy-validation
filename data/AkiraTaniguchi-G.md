@@ -1,5 +1,5 @@
-# 概要
-Transient Storageを利用する
+# summary
+Using Transient Storage
 
 # problem
 Currently, ReentrancyGuardUpgradeable is used to prevent reentrancy attacks.
