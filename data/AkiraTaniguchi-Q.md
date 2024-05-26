@@ -50,3 +50,8 @@ ERC20.approve is executed, but the return value is not checked.
 Why do you bother creating an ArrayLib instead of using an EnumerableSet?
 If you don't need it, why not just delete the ArrayLib?
 
+
+# 4.use solhint
+https://github.com/protofire/solhint
+To maintain quality, we propose the operation of solhint.
+It is effective, for example, in unifying the description of import clauses.
