@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "benoitonchain",
+  "risk": "2",
+  "title": "Reentrancy :     /src/markets/perp/PerpMarketV1.sol",
+  "issueId": 13,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/13"
+}
