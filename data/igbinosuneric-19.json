@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "igbinosuneric",
+  "risk": "3",
+  "title": "Lack of pairId Validation in withdrawProtocolRevenue Function",
+  "issueId": 19,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/19"
+}
