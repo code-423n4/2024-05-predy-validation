@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "jeremie",
+  "risk": "2",
+  "title": "Uses timestamp for comparisons.",
+  "issueId": 24,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/24"
+}
