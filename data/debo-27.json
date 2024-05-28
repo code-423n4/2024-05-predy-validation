@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "debo",
+  "risk": "2",
+  "title": "No access control in the BaseMarket file on the reallocate function & execLiquidationCall function & updateQuoteTokenMap function",
+  "issueId": 27,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/27"
+}
