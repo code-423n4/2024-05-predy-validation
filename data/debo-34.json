@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "debo",
+  "risk": "2",
+  "title": "Privacy breach in the getUserPosition function in the PerpMarketV1 file because anyone can query user positions, exposing sensitive financial data",
+  "issueId": 34,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/34"
+}
