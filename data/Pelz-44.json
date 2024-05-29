@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "Pelz",
+  "risk": "2",
+  "title": " Potential Re-Org Attack Vulnerability in `createPriceFeed` Function in `PriceFeed.sol`",
+  "issueId": 44,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/44"
+}
