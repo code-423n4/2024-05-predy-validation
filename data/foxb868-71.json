@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "foxb868",
+  "risk": "2",
+  "title": "Lack of Validation in `_verifyOrder` Function Enables Unauthorized Token Transfers, Unintended Recipients, and Incorrect Amounts",
+  "issueId": 71,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/71"
+}
