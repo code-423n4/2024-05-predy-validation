@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "foxb868",
+  "risk": "2",
+  "title": "Incorrect Token Transfer in uniswapV3MintCallback Function Causes Liquidity Imbalance and Potential Loss of Funds.",
+  "issueId": 68,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/68"
+}
