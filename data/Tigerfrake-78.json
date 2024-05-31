@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "Tigerfrake",
+  "risk": "3",
+  "title": "Lenders cannot supply tokens to or withdraw from lending pools due to access control conflict",
+  "issueId": 78,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/78"
+}
