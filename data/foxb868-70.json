@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "foxb868",
+  "risk": "2",
+  "title": "Unrestricted Position ID Assignment in _getOrInitPosition Function Enables Data Corruption and Unexpected Behavior",
+  "issueId": 70,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/70"
+}
