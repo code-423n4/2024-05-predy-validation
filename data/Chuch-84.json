@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "Chuch",
+  "risk": "2",
+  "title": "M-1: Use of `abi.encodePacked` can lead to hash collision",
+  "issueId": 84,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/84"
+}
