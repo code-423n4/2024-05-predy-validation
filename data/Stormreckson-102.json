@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "Stormreckson",
+  "risk": "3",
+  "title": "Malicious User Can Set Trader to Zero Address, Forcing Liquidators to Cover Losses Without Reward",
+  "issueId": 102,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/102"
+}
