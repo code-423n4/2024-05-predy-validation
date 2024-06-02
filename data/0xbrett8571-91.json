@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "0xbrett8571",
+  "risk": "2",
+  "title": "Incomplete Tuple Return in getAvailableLiquidityAmount Function",
+  "issueId": 91,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/91"
+}
