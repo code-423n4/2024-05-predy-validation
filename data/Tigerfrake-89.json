@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "Tigerfrake",
+  "risk": "2",
+  "title": "Lack of sanity check for `endTime`",
+  "issueId": 89,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/89"
+}
