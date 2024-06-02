@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "EaglesSecurity",
+  "risk": "2",
+  "title": "Missing 2-step Transfer Ownership Pattern for poolOwner",
+  "issueId": 107,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/107"
+}
