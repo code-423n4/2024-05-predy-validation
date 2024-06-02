@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "0xbrett8571",
+  "risk": "2",
+  "title": "Incorrect Update Amounts in updatePosition Function Leads to Potential Loss of Funds Due to Discrepancies in Recorded Positions.",
+  "issueId": 98,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/98"
+}
