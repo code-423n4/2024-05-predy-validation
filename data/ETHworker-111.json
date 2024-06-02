@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "ETHworker",
+  "risk": "3",
+  "title": "Incorrect Access Control in `withdrawProtocolRevenue` and `withdrawCreatorRevenue` Functions in PredyPool Contract",
+  "issueId": 111,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/111"
+}
