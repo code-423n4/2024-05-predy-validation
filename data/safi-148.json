@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "safi",
+  "risk": "2",
+  "title": "Integer Underflow in collect Function: The collect function uses unchecked subtraction, which can lead to integer underflow if position.tokensOwed0 or position.tokensOwed1 is less than the amounts being subtracted.",
+  "issueId": 148,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/148"
+}
