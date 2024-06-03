@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "Bauchibred",
+  "risk": "2",
+  "title": "Swaps via the `UniswapSettlement` for some supported tokens can be permanently bricked by a malicious actor",
+  "issueId": 128,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/128"
+}
