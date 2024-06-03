@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "Tobezzi",
+  "risk": "2",
+  "title": "Division before multiplication in `Reallocation::calculateUsableTick` function could `result` been zero",
+  "issueId": 139,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/139"
+}
