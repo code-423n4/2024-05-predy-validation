@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "Bauchibred",
+  "risk": "2",
+  "title": " The Gamma Market's trading mechanism is not of the industry standard and is implemented incorrectly cause it hardcodes the maximum acceptable slippage value for all assets even if the volatility/market movement of all integrated assets are way different.",
+  "issueId": 133,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/133"
+}
