@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "Bauchibred",
+  "risk": "2",
+  "title": " Valid liquidations would be DOS'd in some cases due to liquidity check which could then allow a _malicious_ user to ensure they are not liquidatable even if their positions are really bad, by just withdrawing some liquidity required to liquidate them from the pool",
+  "issueId": 120,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/120"
+}
