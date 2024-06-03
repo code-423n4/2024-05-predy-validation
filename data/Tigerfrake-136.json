@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "Tigerfrake",
+  "risk": "2",
+  "title": "`burnAmount` is rounded down during withdrawal in favor of the user",
+  "issueId": 136,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/136"
+}
