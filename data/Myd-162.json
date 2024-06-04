@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "Myd",
+  "risk": "2",
+  "title": "Incorrect Position Closure in autoClose where a negative sign error causes the function to open a new position in the opposite direction instead of closing the existing position.",
+  "issueId": 162,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/162"
+}
