@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "Myd",
+  "risk": "2",
+  "title": "Over-Withdrawal Vulnerability in `removeAsset` Function where the calculation of `finalWithdrawAmount` can result in a value greater than the intended amount when `tokenState.assetScaler` is less than Constants.",
+  "issueId": 158,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/158"
+}
