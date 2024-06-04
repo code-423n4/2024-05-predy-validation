@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "Myd",
+  "risk": "2",
+  "title": "Incomplete Liquidation Handling in `execLiquidationCall` where the removal of a position is not executed if the liquidation call fails or reverts, leading to inconsistent state, stuck funds.",
+  "issueId": 160,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/160"
+}
