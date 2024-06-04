@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "Myd",
+  "risk": "2",
+  "title": "Incorrect Supply Interest Rate Calculation in updateScaler where the calculation of the supply interest rate is incorrect, leading to users being under-rewarded or over-rewarded for their supplied assets, resulting in a loss or gain of funds for the protocol or users.",
+  "issueId": 159,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/159"
+}
