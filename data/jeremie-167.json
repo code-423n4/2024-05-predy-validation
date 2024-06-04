@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "jeremie",
+  "risk": "2",
+  "title": "Don't verify if a pair is enabled leading to use trade even if a pair isn't enabled.",
+  "issueId": 167,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/167"
+}
