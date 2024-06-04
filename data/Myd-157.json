@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "Myd",
+  "risk": "2",
+  "title": "Invalid Tick Value Generation in `calculateMinLowerTick` where the addition of tickSpacing to minLowerTick can result in an invalid tick value that is not a multiple of `tickSpacing`, contradicting the UniswapV3 documentation.",
+  "issueId": 157,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/157"
+}
