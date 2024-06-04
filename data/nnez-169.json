@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "nnez",
+  "risk": "2",
+  "title": "validateRiskParams doesn't check boundary of min and max slippage",
+  "issueId": 169,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/169"
+}
