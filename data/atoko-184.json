@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "atoko",
+  "risk": "2",
+  "title": "Users can lose a portion of their trade funds if some of their funds haven't been added to the underlying Uniswap pools.",
+  "issueId": 184,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/184"
+}
