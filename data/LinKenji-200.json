@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "LinKenji",
+  "risk": "2",
+  "title": " Incomplete Rebalancing Logic in Perp.reallocate Can Cause Issues When Adding Liquidity.",
+  "issueId": 200,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/200"
+}
