@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "LinKenji",
+  "risk": "2",
+  "title": "Incorrect Price Feed Implementation Can Lead to Exploitable Price Deviations",
+  "issueId": 191,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/191"
+}
