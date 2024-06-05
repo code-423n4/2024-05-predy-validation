@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "LinKenji",
+  "risk": "2",
+  "title": "Unforeseen Underflow in Perp.SqrtPerpAssetStatus Can Cause System Disruptions.",
+  "issueId": 198,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/198"
+}
