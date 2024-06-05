@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "Kaysoft",
+  "risk": "2",
+  "title": "swapExactIn(...) and swapExactOut(...) functions cannot swap ETH",
+  "issueId": 172,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/172"
+}
