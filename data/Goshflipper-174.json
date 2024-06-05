@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "Goshflipper",
+  "risk": "3",
+  "title": "Lack of Input Validation on createPriceFeed in PriceFeedFactory Contract",
+  "issueId": 174,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/174"
+}
