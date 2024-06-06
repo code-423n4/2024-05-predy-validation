@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "xiao",
+  "risk": "3",
+  "title": "totalCompoundDeposited is scaled twice, resulting in incorrect TotalCollateralValue",
+  "issueId": 213,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/213"
+}
