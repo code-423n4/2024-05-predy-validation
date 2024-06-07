@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "Tigerfrake",
+  "risk": "2",
+  "title": "Accumulated creator revenue cannot be withdrawn if the set `poolOwner` is blacklisted by the `pool.token`.",
+  "issueId": 236,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/236"
+}
