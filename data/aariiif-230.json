@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "aariiif",
+  "risk": "2",
+  "title": "Trader Address Used Instead of Witness Address in PerpMarketV1 _verifyOrder function, Leading to Potential Signature Verification Failure and Unauthorized Transfers.",
+  "issueId": 230,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/230"
+}
