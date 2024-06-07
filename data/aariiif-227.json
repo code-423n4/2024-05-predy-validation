@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "aariiif",
+  "risk": "2",
+  "title": "Incorrect Net Value Usage in Initial Margin Calculation (_calculateInitialMargin).",
+  "issueId": 227,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/227"
+}
