@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "aariiif",
+  "risk": "2",
+  "title": "Lack of Amount Validation in PerpMarketV3 _verifyOrderV3 Function Can Cause Unauthorized Token Withdrawals.",
+  "issueId": 231,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/231"
+}
