@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "aariiif",
+  "risk": "2",
+  "title": "getUserPosition Returns Uninitialized Vault Data for Users Without Positions.",
+  "issueId": 228,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/228"
+}
