@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "BlockSafe",
+  "risk": "2",
+  "title": " calculateUsableTick calculation is not done properly . ",
+  "issueId": 267,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/267"
+}
