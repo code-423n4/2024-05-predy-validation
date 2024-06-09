@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "almurhasan",
+  "risk": "3",
+  "title": "DOS on liquidation when totalNormalBorrowed is equal to ( totalCompoundDeposited+totalNormalDeposited) for a  token in predypool.",
+  "issueId": 264,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/264"
+}
