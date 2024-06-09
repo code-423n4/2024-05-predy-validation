@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "almurhasan",
+  "risk": "2",
+  "title": "Attackers can revert the trade function by transferring the token directly to the predypool.",
+  "issueId": 263,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/263"
+}
