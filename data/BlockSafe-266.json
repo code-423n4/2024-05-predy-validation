@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "BlockSafe",
+  "risk": "2",
+  "title": "Inefficient Liquidity Allocation Due to Symmetric Tick Range Assumption in Uniswap V3 Pools",
+  "issueId": 266,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/266"
+}
