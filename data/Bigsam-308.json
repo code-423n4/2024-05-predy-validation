@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "Bigsam",
+  "risk": "3",
+  "title": "A Malicious user can Claim all CreatorRevenue eventhough he is not the poolowner and also the attacker can modifier/update all state variables in a pair status : Potential Bypass of Access Control in `updatePoolOwner` Function",
+  "issueId": 308,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/308"
+}
