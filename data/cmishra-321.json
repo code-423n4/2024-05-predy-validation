@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "cmishra",
+  "risk": "2",
+  "title": "The onlyByLocker modifier is used to restrict access to certain functions, but it's not properly protected. An attacker can manipulate the globalData.lockData.locker variable to gain unauthorized access.",
+  "issueId": 321,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/321"
+}
