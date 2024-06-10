@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "Audinarey",
+  "risk": "3",
+  "title": "reallocation of LP funds can lead to wrong estimation of `_assetStatus.lastFee{0/1}Growth` when there is no available liquidity in the LP position that constitutes the Squart",
+  "issueId": 324,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/324"
+}
