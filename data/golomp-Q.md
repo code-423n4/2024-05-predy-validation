@@ -1967,3 +1967,37 @@ Recommendation
 Avoid relying on block.timestamp.
 
 </details>
+
+## L-16: Local variable shadowing
+```solidity
+updateWhitelistFiller
+```
+ Detection of shadowing using local variables. This will not lead to any error but can be confusing. Rename the local variables that shadow another component.
+
+<details><summary>2 Found Instances</summary>
+
+- Found whitelistFiller in 
+
+src/markets/gamma/GammaTradeMarket.sol#69 [Line: 69](src/markets/gamma/GammaTradeMarket.sol#L69)
+	```solidity
+	    GammaTradeMarket.initialize(IPredyPool,address,address,address).whitelistFiller
+	```
+
+src/base/BaseMarketUpgradable.sol#23 [Line: 92](src/base/BaseMarketUpgradable.sol#L23)
+	```solidity
+	    PerpMarketV1.initialize(IPredyPool,address,address,address).whitelistFiller 
+	```
+
+- Found whitelistFiller in 
+
+src/markets/perp/PerpMarketV1.sol#92 [Line: 92](src/markets/perp/PerpMarketV1.sol#L92)
+	```solidity
+	    PerpMarketV1.initialize(IPredyPool,address,address,address).whitelistFiller
+	```
+
+src/base/BaseMarketUpgradable.sol#23 [Line: 23](src/base/BaseMarketUpgradable.sol#L23)
+	```solidity
+	    BaseMarketUpgradable.whitelistFiller
+	```
+
+</details>
