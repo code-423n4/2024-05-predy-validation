@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "golomp",
+  "risk": "3",
+  "title": "H-1: Unprotected initialize",
+  "issueId": 319,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/319"
+}
