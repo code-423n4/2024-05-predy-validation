@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "cmishra",
+  "risk": "3",
+  "title": "The uniswapV3MintCallback function is vulnerable to reentrancy attacks. An attacker can exploit this by creating a contract that calls uniswapV3MintCallback repeatedly, draining the contract's funds.",
+  "issueId": 322,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/322"
+}
