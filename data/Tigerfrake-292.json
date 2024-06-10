@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "Tigerfrake",
+  "risk": "2",
+  "title": "Incorrect `fees` may be returned due to unchecked underflow in `getFeeGrowthInside()`",
+  "issueId": 292,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/292"
+}
