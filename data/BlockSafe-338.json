@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "BlockSafe",
+  "risk": "2",
+  "title": "Zero nonce management within the order validation process, which might make the contracts susceptible to replay attacks.",
+  "issueId": 338,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/338"
+}
