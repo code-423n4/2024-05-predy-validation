@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "EPSec",
+  "risk": "2",
+  "title": "Mid 03 No IsContract Check On Safe Transfers",
+  "issueId": 388,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/388"
+}
