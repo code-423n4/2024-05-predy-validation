@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "3n0ch",
+  "risk": "2",
+  "title": "An attacker can partial liquidate a vault to `1 baseToken` to prevent a user claiming the margin back in a normal way",
+  "issueId": 367,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/367"
+}
