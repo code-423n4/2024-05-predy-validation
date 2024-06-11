@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "SBSecurity",
+  "risk": "2",
+  "title": "updatePoolOwner should call withdrawCreatorRevenue, otherwise, creator fees will be given to the next owner ",
+  "issueId": 341,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/341"
+}
