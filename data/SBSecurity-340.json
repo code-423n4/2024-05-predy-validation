@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "SBSecurity",
+  "risk": "3",
+  "title": "Dust will be accumulated when calculating the protocol and creator revenues due to the division performed",
+  "issueId": 340,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/340"
+}
