@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "BlockSafe",
+  "risk": "3",
+  "title": "Significant revenue loss due to round off error (accumulatedProtocolRevenue and accumulatedCreatorRevenue) ",
+  "issueId": 381,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/381"
+}
