@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "WinSec",
+  "risk": "3",
+  "title": "Uniswap doesn't round for negative ticks affecting important functions",
+  "issueId": 392,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/392"
+}
