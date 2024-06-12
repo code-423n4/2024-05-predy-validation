@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "3n0ch",
+  "risk": "2",
+  "title": "In `GammaTradeMarket`, if a user `executeTrade` with `positionId` that is either closed or liquidated through `GammaTradeMarket`, then he can not close that position",
+  "issueId": 401,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/401"
+}
