@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "crypticdefense",
+  "risk": "2",
+  "title": "`PriceFeed` requires the base price to have an exponent value of exactly `-8`, causing DoS",
+  "issueId": 494,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/494"
+}
