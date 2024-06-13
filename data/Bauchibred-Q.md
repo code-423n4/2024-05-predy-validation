@@ -2,32 +2,34 @@
 
 ## Table of Contents
 
-| Issue ID                                                                                                                                                    | Description                                                                                                                                  |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| [QA-01](<#qa-01-decaylib#decay2()-should-prevent-division-by-zero>)                                                                                         | `DecayLib#decay2()` should prevent division by zero                                                                                          |
-| [QA-02](<#qa-02-pricefeed#getsqrtprice()-could-over/undervalue-the-quote-price-leading-to-wrong-liquidation-decisions>)                                     | `PriceFeed#getSqrtPrice()` could over/undervalue the quote price leading to wrong liquidation decisions                                      |
-| [QA-03](#qa-03-valid-liquidations-would-fail-in-turbulent-situations-because-the-max-slippage-idea-is-applied-thats-3%)                                     | Valid liquidations would fail in turbulent situations because the max slippage idea is applied that's 3%                                     |
-| [QA-04](#qa-04-the-current-pricefeed.sol-could-become-completely-unavailable)                                                                               | The current `pricefeed.sol` could become completely unavailable                                                                              |
-| [QA-05](#qa-05-no-deadlines-applies-during-swaps-which-would-then-cause-for-swaps-to-be-potentially-maliciously-executed)                                   | No deadlines applies during swaps which would then cause for swaps to be potentially maliciously executed                                    |
-| [QA-06](#qa-06-liquidations-can-be-stolen-from-honest-users)                                                                                                | Liquidations can be stolen from honest users                                                                                                 |
-| [QA-07](<#qa-07-external-queries-from-pricefeed#getsqrtprice()-should-be-be-wrapped-in-a-try-catch>)                                                        | External queries from `PriceFeed#getSqrtPrice()` should be be wrapped in a try catch                                                         |
-| [QA-08](#qa-08-a-user-can-frontrun-liquidations-of-their-unhealthy-accounts-by-liquidating-in-small-portions-by-themselves)                                 | A user can frontrun liquidations of their unhealthy accounts by liquidating in small portions by themselves                                  |
-| [QA-09](#qa-09-trades-are-being-finalized-with-an-easily-manipulatable-prices-which-might-cause-frequent-reverts)                                           | Trades are being finalized with an easily manipulatable prices which might cause frequent reverts                                            |
-| [QA-10](#qa-10-a-filler-can-front/back-run-the-execution-of-a-trade-to-immediately-liquidate-a-user)                                                        | A filler can front/back run the execution of a trade to immediately liquidate a user                                                         |
-| [QA-11](<#qa-11-external-queries-from-getsqrtprice()-should-be-done-more-accurately>)                                                                       | External queries from `getSqrtPrice()` should be done more accurately                                                                        |
-| [QA-12](#qa-12-valid-pairs-seem-to-wrongly-invalidated)                                                                                                     | Valid pairs seem to wrongly invalidated                                                                                                      |
-| [QA-13](#qa-13-users-could-be-liquidated-in-the-next-block)                                                                                                 | Users could be liquidated in the next block                                                                                                  |
-| [QA-14](#qa-14-implement-better-naming-conventions-to-codes-&-fix-typos)                                                                                    | Implement better naming conventions to codes & fix typos                                                                                     |
-| [QA-15](<#qa-15-predypool#uniswapv3mintcallback()-is-potentially-vulnerable-to-some-attacks>)                                                               | `PredyPool#uniswapV3MintCallback()` is potentially vulnerable to some attacks                                                                |
-| [QA-16](<#qa-16-supplylogic#burnbondandtransfertoken()-could-revert-for-some-tokens-in-the-future>)                                                         | `SupplyLogic#burnBondAndTransferToken()` could revert for some tokens in the future                                                          |
-| [QA-17](<#qa-17-some-locks-would-be-un-initializable-due-to-direct-balanceof()-call>)                                                                       | Some locks would be un-initializable due to direct `balanceOf()` call                                                                        |
-| [QA-18](#qa-18-deployment-of-new-supply-tokens-would-fail-for-some-tokens)                                                                                  | Deployment of new supply tokens would fail for some tokens                                                                                   |
-| [QA-19](#qa-19-solmates-safetransferlib-shouldnt-be-used-as-it-doesnt-check-for-account-existence)                                                          | Solmate's `SafeTransferLib` shouldn't be used as it doesn't check for account existence                                                      |
-| [QA-20](#qa-20-setters-dont-have-equality-checkers)                                                                                                         | Setters don't have equality checkers                                                                                                         |
-| [QA-21](#qa-21-oracle-price-updates-could-be-front-run-to-game-the-system)                                                                                  | Oracle price updates could be front run to game the system                                                                                   |
-| [QA-22](<#qa-22-make-predypool#withdrawcreatorrevenue()-more-effective>)                                                                                    | Make `PredyPool#withdrawCreatorRevenue()` more effective                                                                                     |
-| [QA-23](<#qa-23--uniswapsettlement#swapexactin()-should-be-made-safer>)                                                                                     | `UniswapSettlement#swapExactIn()` should be made safer                                                                                       |
-| [QA-24](<#qa-24--pricefeed#getsqrtprice()-query-to-latestrounddata()-is-done-in-a-wrong-way-since-there-is-no-check-first-to-see-if-the-sequencer-is-down>) | `PriceFeed#getSqrtPrice()` query to `latestRoundData()` is done in a wrong way since there is no check first to see if the sequencer is down |
+| Issue ID                                                                                                                                                                     | Description                                                                                                                                                  |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [QA-01](<#qa-01-decaylib#decay2()-should-prevent-division-by-zero>)                                                                                                          | `DecayLib#decay2()` should prevent division by zero                                                                                                          |
+| [QA-02](<#qa-02-pricefeed#getsqrtprice()-could-over/undervalue-the-quote-price-leading-to-wrong-liquidation-decisions>)                                                      | `PriceFeed#getSqrtPrice()` could over/undervalue the quote price leading to wrong liquidation decisions                                                      |
+| [QA-03](#qa-03-valid-liquidations-would-fail-in-turbulent-situations-because-the-max-slippage-idea-is-applied-thats-3%)                                                      | Valid liquidations would fail in turbulent situations because the max slippage idea is applied that's 3%                                                     |
+| [QA-04](#qa-04-the-current-pricefeed.sol-could-become-completely-unavailable)                                                                                                | The current `pricefeed.sol` could become completely unavailable                                                                                              |
+| [QA-05](#qa-05-no-deadlines-applies-during-swaps-which-would-then-cause-for-swaps-to-be-potentially-maliciously-executed)                                                    | No deadlines applies during swaps which would then cause for swaps to be potentially maliciously executed                                                    |
+| [QA-06](#qa-06-liquidations-can-be-stolen-from-honest-users)                                                                                                                 | Liquidations can be stolen from honest users                                                                                                                 |
+| [QA-07](<#qa-07-external-queries-from-pricefeed#getsqrtprice()-should-be-be-wrapped-in-a-try-catch>)                                                                         | External queries from `PriceFeed#getSqrtPrice()` should be be wrapped in a try catch                                                                         |
+| [QA-08](#qa-08-a-user-can-frontrun-liquidations-of-their-unhealthy-accounts-by-liquidating-in-small-portions-by-themselves)                                                  | A user can frontrun liquidations of their unhealthy accounts by liquidating in small portions by themselves                                                  |
+| [QA-09](#qa-09-trades-are-being-finalized-with-an-easily-manipulatable-prices-which-might-cause-frequent-reverts)                                                            | Trades are being finalized with an easily manipulatable prices which might cause frequent reverts                                                            |
+| [QA-10](#qa-10-a-filler-can-front/back-run-the-execution-of-a-trade-to-immediately-liquidate-a-user)                                                                         | A filler can front/back run the execution of a trade to immediately liquidate a user                                                                         |
+| [QA-11](<#qa-11-external-queries-from-getsqrtprice()-should-be-done-more-accurately>)                                                                                        | External queries from `getSqrtPrice()` should be done more accurately                                                                                        |
+| [QA-12](#qa-12-valid-pairs-seem-to-wrongly-invalidated)                                                                                                                      | Valid pairs seem to wrongly invalidated                                                                                                                      |
+| [QA-13](#qa-13-users-could-be-liquidated-in-the-next-block)                                                                                                                  | Users could be liquidated in the next block                                                                                                                  |
+| [QA-14](#qa-14-implement-better-naming-conventions-to-codes-&-fix-typos)                                                                                                     | Implement better naming conventions to codes & fix typos                                                                                                     |
+| [QA-15](<#qa-15-predypool#uniswapv3mintcallback()-is-potentially-vulnerable-to-some-attacks>)                                                                                | `PredyPool#uniswapV3MintCallback()` is potentially vulnerable to some attacks                                                                                |
+| [QA-16](<#qa-16-supplylogic#burnbondandtransfertoken()-could-revert-for-some-tokens-in-the-future>)                                                                          | `SupplyLogic#burnBondAndTransferToken()` could revert for some tokens in the future                                                                          |
+| [QA-17](<#qa-17-some-locks-would-be-un-initializable-due-to-direct-balanceof()-call>)                                                                                        | Some locks would be un-initializable due to direct `balanceOf()` call                                                                                        |
+| [QA-18](#qa-18-deployment-of-new-supply-tokens-would-fail-for-some-tokens)                                                                                                   | Deployment of new supply tokens would fail for some tokens                                                                                                   |
+| [QA-19](#qa-19-solmates-safetransferlib-shouldnt-be-used-as-it-doesnt-check-for-account-existence)                                                                           | Solmate's `SafeTransferLib` shouldn't be used as it doesn't check for account existence                                                                      |
+| [QA-20](#qa-20-setters-dont-have-equality-checkers)                                                                                                                          | Setters don't have equality checkers                                                                                                                         |
+| [QA-21](#qa-21-oracle-price-updates-could-be-front-run-to-game-the-system)                                                                                                   | Oracle price updates could be front run to game the system                                                                                                   |
+| [QA-22](<#qa-22-make-predypool#withdrawcreatorrevenue()-more-effective>)                                                                                                     | Make `PredyPool#withdrawCreatorRevenue()` more effective                                                                                                     |
+| [QA-23](<#qa-23--uniswapsettlement#swapexactin()-should-be-made-safer>)                                                                                                      | `UniswapSettlement#swapExactIn()` should be made safer                                                                                                       |
+| [QA-24](<#qa-24--pricefeed#getsqrtprice()-query-to-latestrounddata()-is-done-in-a-wrong-way-since-there-is-no-check-first-to-see-if-the-sequencer-is-down>)                  | `PriceFeed#getSqrtPrice()` query to `latestRoundData()` is done in a wrong way since there is no check first to see if the sequencer is down                 |
+| [QA-25](#qa-25-pricefeedgetsqrtprice-might-be-broken-in-the-future-due-to-its-integration-with-pyths-expo-value)                                                             | `PriceFeed#getSqrtPrice()` might be broken in the future due to it's integration with Pyth's `expo` value                                                    |
+| [QA-26](#qa-26-protocol-uses-two-diferent-price-source-when-querying-prices-which-is-riskier-than-using-one-sure-source-or-having-the-second-confirmed-source-as-a-fallback) | Protocol uses two diferent price source when querying prices which is riskier than using one sure source or having the second confirmed source as a fallback |
 
 ## QA-01 `DecayLib#decay2()` should prevent division by zero
 
@@ -1146,3 +1148,78 @@ If the sequencer goes down, the protocol will allow users to continue to operate
 Consider reimplementing the timing logics on the L2 side of the protocol to take the fact that the sequencer could indeed be down into account.
 
 Additionally, since Chainlink recommends that all Optimistic L2 oracles consult the Sequencer Uptime Feed to ensure that the sequencer is live before trusting the data returned by the oracle introduce a seqeuncer check to ensure that the sequencer is active and prices returned are accurate.
+
+## QA-25 `PriceFeed#getSqrtPrice()` might be broken in the future due to it's integration with Pyth's `expo` value
+
+### Proof of Concept
+
+Take a look at https://github.com/code-423n4/2024-05-predy/blob/a9246db5f874a91fb71c296aac6a66902289306a/src/PriceFeed.sol#L45-L58
+
+```solidity
+    function getSqrtPrice() external view returns (uint256 sqrtPrice) {
+        (, int256 quoteAnswer,,,) = AggregatorV3Interface(_quotePriceFeed).latestRoundData();
+    //@audit
+        IPyth.Price memory basePrice = IPyth(_pyth).getPriceNoOlderThan(_priceId, VALID_TIME_PERIOD);
+
+        require(basePrice.expo == -8, "INVALID_EXP");
+
+        require(quoteAnswer > 0 && basePrice.price > 0);
+
+        uint256 price = uint256(int256(basePrice.price)) * Constants.Q96 / uint256(quoteAnswer);
+        price = price * Constants.Q96 / _decimalsDiff;
+
+        sqrtPrice = FixedPointMathLib.sqrt(price);
+    }
+```
+
+This function returns the square root of the baseToken price quoted in quoteToken, and this data is queried when [checking if the vault is in danger](https://github.com/code-423n4/2024-05-predy/blob/a9246db5f874a91fb71c296aac6a66902289306a/src/libraries/logic/LiquidationLogic.sol#L129) in order to liquidate it, with needing a confirmation via `PositionCalculator.isLiquidatable()`... extensively it also is used for all other pricing logics, nw it includes an expo, check with has the value of the expo be `== - 8`.
+
+However, going to the implementation of Pyth natively, i.e theP yth Client, we can see that the actual exp value can indeed be negative and positive:
+
+- [add_price.rs#L44](https://github.com/pyth-network/pyth-client/blob/main/program/rust/src/processor/add_price.rs#L44): When you add a price, it checks the exponent.
+  • [utils.rs#L101-L106](https://github.com/pyth-network/pyth-client/blob/main/program/rust/src/utils.rs#L101-L106): It can be between +-MAX_NUM_DECIMALS
+  • [c_oracle_header.rs#L14](https://github.com/pyth-network/pyth-client/blob/main/program/rust/src/c_oracle_header.rs#L14): The MAX_NUM_DECIMALS has a value of 12 so theoretically it can be +-12.
+
+Furthermore, based on a Spearbit discussion with the Pyth team on a previous audit, _(see 5.2.2 from [this report](https://github.com/euler-xyz/euler-price-oracle/blob/c4074ab7a7aa0c6ffbc555391d9f0bfe1ee5fd6f/audits/Euler_Price_Oracle_Spearbit_Report_DRAFT.pdf))_ the Pyth team have confirmed that currently they have set [the `expo` must be -ve check in the SDK](https://github.com/pyth-network/pyth-crosschain/blob/a888ba318c0325c29070eaf5afcc3a4d443b058c/target_chains/ethereum/sdk/solidity/PythUtils.sol#L18) to facilitate the discussions but they do not exclude the fact that this value can be positive in the future.
+
+### Impact
+
+QA, considering this affects future code, however this means that valid prices would not be ingested.
+
+### Recommendation
+
+Consider supporting positive `8` exp value also for a more generalized integration of the PythOracle.
+
+## QA-26 Protocol uses two diferent price source when querying prices which is riskier than using one sure source or having the second confirmed source as a fallback
+
+### Proof of Concept
+
+Take a look at `PriceFeed#getSqrtPrice()` here https://github.com/code-423n4/2024-05-predy/blob/a9246db5f874a91fb71c296aac6a66902289306a/src/PriceFeed.sol#L45-L58
+
+```solidity
+    function getSqrtPrice() external view returns (uint256 sqrtPrice) {
+        (, int256 quoteAnswer,,,) = AggregatorV3Interface(_quotePriceFeed).latestRoundData();  //@audit
+        IPyth.Price memory basePrice = IPyth(_pyth).getPriceNoOlderThan(_priceId, VALID_TIME_PERIOD);
+
+        require(basePrice.expo == -8, "INVALID_EXP");
+
+        require(quoteAnswer > 0 && basePrice.price > 0);
+
+        uint256 price = uint256(int256(basePrice.price)) * Constants.Q96 / uint256(quoteAnswer);
+        price = price * Constants.Q96 / _decimalsDiff;
+
+        sqrtPrice = FixedPointMathLib.sqrt(price);
+    }
+```
+
+This function returns the square root of the baseToken price quoted in quoteToken, and this data is queried when [checking if the vault is in danger](https://github.com/code-423n4/2024-05-predy/blob/a9246db5f874a91fb71c296aac6a66902289306a/src/libraries/logic/LiquidationLogic.sol#L129) in order to liquidate it, with needing a confirmation via `PositionCalculator.isLiquidatable()`, problem however is that the current logic is unsafe, considering a failure from one of the supported oracle sources, causes the whole attempt to revert.
+
+Understandably, one can assume protocol is implementing two sources to ensure an attacker manipulating one source would nnot easily manipulate the other, but this leaves the execution vulnerable to the bug case where if one of the sources fail, the whole attempt fails.
+
+### Impact
+
+Protocol seems to wrongly integrate multiple oracles, cause currently if one of the oracles bubblle up an error the whole attempt at pricing the tokens fail, where as generally adopted logic would be to query one source and if it fails, query the other, which ensures the failure would occur 50% less than what's been implemented now.
+
+### Recommended Mitigation Steps
+
+Consider correctly integrating multiple oracles atempt to query both prices from one source, if it fails then query the other source for both prices, or leave this implementation but have it in a try/catch and if any attempt fails, then query another source.
