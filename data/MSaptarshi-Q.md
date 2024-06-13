@@ -17,6 +17,16 @@ It is a known issue from [PYTH](https://docs.pyth.network/price-feeds/best-pract
 ## Recommendation
 Make sure it is well known through documentation
 
+# [L-04] Empty Constructor
+Constructors should not be left empty or uninvoked .
+To prevent the implementation contract from being used, we invoke the _disableInitializers
+ function in the constructor to automatically lock it when it is deployed.
+https://github.com/code-423n4/2024-05-predy/blob/a9246db5f874a91fb71c296aac6a66902289306a/src/PredyPool.sol#L68
+https://github.com/code-423n4/2024-05-predy/blob/a9246db5f874a91fb71c296aac6a66902289306a/src/markets/perp/PerpMarketV1.sol#L90
+https://github.com/code-423n4/2024-05-predy/blob/a9246db5f874a91fb71c296aac6a66902289306a/src/markets/gamma/GammaTradeMarket.sol#L67
+## Recommendation
+Call `_disableInitializers` in constructor
+
 # [C-01] Admin related functions missing events
 Centralised/Admin related functions should always emit events for transparency purposes through out the protocol
 https://github.com/code-423n4/2024-05-predy/blob/a9246db5f874a91fb71c296aac6a66902289306a/src/base/BaseMarketUpgradable.sol#L128
