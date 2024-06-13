@@ -2,6 +2,141 @@
 
 ##
 
+## [L-] Staker may lose the amount with less values 
+
+
+
+##
+
+## [L-] Usage of `slot0` is extremely easy to manipulate
+
+### Impact
+The function uses slot0 to obtain the current tick (tickCurrent). Since slot0 is easy to manipulate, attackers can influence the value of tickCurrent.
+
+Manipulating tickCurrent can lead to incorrect values for feeGrowthBelow0X128, feeGrowthBelow1X128, feeGrowthAbove0X128, and feeGrowthAbove1X128. Consequently, feeGrowthInside0X128 and feeGrowthInside1X128 values will also be incorrect.
+
+[slot0(https://docs.uniswap.org/contracts/v3/reference/core/interfaces/pool/IUniswapV3PoolState#slot0) is the most recent data point and is therefore extremely easy to manipulate.
+
+
+```solidity
+FILE:2024-05-predy/src/libraries/UniHelper.sol
+
+104: (, int24 tickCurrent,,,,,) = IUniswapV3Pool(uniswapPoolAddress).slot0();
+
+```
+https://github.com/code-423n4/2024-05-predy/blob/a9246db5f874a91fb71c296aac6a66902289306a/src/libraries/UniHelper.sol#L104
+
+### Recommended Mitigations
+To make any calculation use a TWAP instead of slot0.
+
+##
+
+## [L-] Calculating Fee Growth for Ill-Defined Tick Range Leading to Nonsensical Values
+
+### Impact
+When tickLower and tickUpper are the same, the function tries to calculate fee growth within a zero-width range.
+
+The variables feeGrowthBelow0X128, feeGrowthBelow1X128, feeGrowthAbove0X128, and feeGrowthAbove1X128 are determined based on comparisons between tickCurrent, tickLower, and tickUpper.
+
+Since the range is ill-defined, the fee growth values calculated are nonsensical and do not represent any real liquidity position.
+This can lead to incorrect fee distributions, as the calculated fee growth inside the range does not correspond to any actual accrued fees.
+
+```solidity
+FILE: 2024-05-predy/src/libraries/UniHelper.sol
+
+ function getFeeGrowthInside(address uniswapPoolAddress, int24 tickLower, int24 tickUpper)
+        internal
+        view
+        returns (uint256 feeGrowthInside0X128, uint256 feeGrowthInside1X128)
+    {
+        (, int24 tickCurrent,,,,,) = IUniswapV3Pool(uniswapPoolAddress).slot0();
+
+        uint256 feeGrowthGlobal0X128 = IUniswapV3Pool(uniswapPoolAddress).feeGrowthGlobal0X128();
+        uint256 feeGrowthGlobal1X128 = IUniswapV3Pool(uniswapPoolAddress).feeGrowthGlobal1X128();
+
+        // calculate fee growth below
+        uint256 feeGrowthBelow0X128;
+        uint256 feeGrowthBelow1X128;
+
+        unchecked {
+            {
+                (,, uint256 lowerFeeGrowthOutside0X128, uint256 lowerFeeGrowthOutside1X128,,,,) =
+                    IUniswapV3Pool(uniswapPoolAddress).ticks(tickLower);
+
+                if (tickCurrent >= tickLower) {
+                    feeGrowthBelow0X128 = lowerFeeGrowthOutside0X128;
+                    feeGrowthBelow1X128 = lowerFeeGrowthOutside1X128;
+                } else {
+                    feeGrowthBelow0X128 = feeGrowthGlobal0X128 - lowerFeeGrowthOutside0X128;
+                    feeGrowthBelow1X128 = feeGrowthGlobal1X128 - lowerFeeGrowthOutside1X128;
+                }
+            }
+
+            // calculate fee growth above
+            uint256 feeGrowthAbove0X128;
+            uint256 feeGrowthAbove1X128;
+
+            {
+                (,, uint256 upperFeeGrowthOutside0X128, uint256 upperFeeGrowthOutside1X128,,,,) =
+                    IUniswapV3Pool(uniswapPoolAddress).ticks(tickUpper);
+
+                if (tickCurrent < tickUpper) {
+                    feeGrowthAbove0X128 = upperFeeGrowthOutside0X128;
+                    feeGrowthAbove1X128 = upperFeeGrowthOutside1X128;
+                } else {
+                    feeGrowthAbove0X128 = feeGrowthGlobal0X128 - upperFeeGrowthOutside0X128;
+                    feeGrowthAbove1X128 = feeGrowthGlobal1X128 - upperFeeGrowthOutside1X128;
+                }
+            }
+
+            feeGrowthInside0X128 = feeGrowthGlobal0X128 - feeGrowthBelow0X128 - feeGrowthAbove0X128;
+            feeGrowthInside1X128 = feeGrowthGlobal1X128 - feeGrowthBelow1X128 - feeGrowthAbove1X128;
+        }
+
+```
+https://github.com/code-423n4/2024-05-predy/blob/a9246db5f874a91fb71c296aac6a66902289306a/src/libraries/UniHelper.sol#L99-L147
+
+### Example Scenario
+Consider a scenario where tickLower and tickUpper are both set to 500.
+
+Current Tick:
+
+Let's assume tickCurrent is 500.
+Fee Growth Calculation:
+
+The function retrieves global fee growth values and fee growth outside the ticks.
+Since tickLower == tickUpper == tickCurrent, the calculations for feeGrowthBelow and feeGrowthAbove will involve comparing the same values, leading to:
+
+```solidity
+feeGrowthBelow0X128 = lowerFeeGrowthOutside0X128;
+feeGrowthBelow1X128 = lowerFeeGrowthOutside1X128;
+feeGrowthAbove0X128 = upperFeeGrowthOutside0X128;
+feeGrowthAbove1X128 = upperFeeGrowthOutside1X128;
+
+```
+
+Fee Growth Inside:
+
+```solidity
+
+feeGrowthInside0X128 = feeGrowthGlobal0X128 - feeGrowthBelow0X128 - feeGrowthAbove0X128;
+feeGrowthInside1X128 = feeGrowthGlobal1X128 - feeGrowthBelow1X128 - feeGrowthAbove1X128;
+
+```
+This results in nonsensical values as feeGrowthBelow and feeGrowthAbove do not accurately represent the fee growth inside a zero-width range.
+
+### Recommended Mitigation
+Add this code to ensure both values are different 
+
+```solidity
+
+require(tickLower < tickUpper, "Invalid tick range");
+
+```
+
+
+##
+
 ## [L-] Revenue Discrepancies in ``poolStatus.accumulatedProtocolRevenue`` and ``poolStatus.accumulatedCreatorRevenue`` Due to Ineffective Fee Division 
 
 ### Impact 
@@ -171,7 +306,56 @@ if (pairStatus.lastUpdateTimestamp == block.timestamp) {
 
 ##
 
+## [L-] ``onlyPoolOwner`` can intentionally sets ``feeRatio`` to 0 
+
+The updateFeeRatio function currently lacks a check for a minimum fee ratio, which means that the pool owner can mistakenly or maliciously set the fee ratio to 0. This can have significant negative implications for the protocol,
+
+- Setting the fee ratio to 0 would result in no fees being collected, which would impact the revenue for liquidity providers and the protocol itself.
+- Without fees, the protocol may not be able to cover operational costs.
+-  Zero fees could lead to abnormal trading behavior, including potential market manipulation.
+
+```solidity
+FILE:2024-05-predy/src/libraries/logic/AddPairLogic.sol
+
+ function updateFeeRatio(DataType.PairStatus storage _pairStatus, uint8 _feeRatio) external {
+        validateFeeRatio(_feeRatio);
+
+        _pairStatus.feeRatio = _feeRatio;
+
+        emit FeeRatioUpdated(_pairStatus.id, _feeRatio);
+    }
+
+
+```
+https://github.com/code-423n4/2024-05-predy/blob/a9246db5f874a91fb71c296aac6a66902289306a/src/libraries/logic/AddPairLogic.sol#L96-L102
+
+### Recommended Mitigation
+Enforce the MinFee check to avoid unintended consequences
+
+```solidity
+require(_feeRatio >= MIN_FEE_RATIO, "FEE_TOO_LOW");
+
+``` 
+
+##
+
+## [L-] Inappropriate Non-Positive Check on Unsigned Integer
+
+The condition if (_amount <= 0) in Solidity is inappropriate when _amount is of type uint (unsigned integer). In Solidity, uint cannot be negative, and the only non-positive value it can take is 0. Therefore, checking if _amount is less than or equal to 0 is redundant, as 0 is the only possible value that could satisfy this condition.
+
+```diff
+FILE: 2024-05-predy/src/libraries/logic/SupplyLogic.sol
+
+- 29: if (_amount <= 0) {
++ 29: if (_amount > 0) {
+
+```
+https://github.com/code-423n4/2024-05-predy/blob/a9246db5f874a91fb71c296aac6a66902289306a/src/libraries/logic/SupplyLogic.sol#L29
+
+##
+
 ## [L-] 
+
 
 
 
