@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "crypticdefense",
+  "risk": "2",
+  "title": "Interest rate `lastUpdatedTimestamp` is updated to the current `block.timestamp` despite no actual update to the `pool status`",
+  "issueId": 498,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/498"
+}
