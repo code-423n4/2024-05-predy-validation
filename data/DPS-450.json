@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "DPS",
+  "risk": "3",
+  "title": "`PredyPool::trade()` if statement is using the wrong address",
+  "issueId": 450,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/450"
+}
