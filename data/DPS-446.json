@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "DPS",
+  "risk": "2",
+  "title": "Orders might be left unexecuted",
+  "issueId": 446,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/446"
+}
