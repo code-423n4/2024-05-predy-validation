@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "crypticdefense",
+  "risk": "3",
+  "title": "`ApplyInterestLib::applyInterestForPoolStatus` may always calculate `interestRate = 0` due to division by `365 days`",
+  "issueId": 497,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/497"
+}
