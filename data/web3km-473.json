@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "web3km",
+  "risk": "2",
+  "title": "The first created vault will have an id 0, which will be innacessible as when passing an id of 0 it means that a new vault will be created",
+  "issueId": 473,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/473"
+}
