@@ -5,7 +5,7 @@ https://github.com/code-423n4/2024-05-predy/blob/a9246db5f874a91fb71c296aac6a669
 Dont hardcode it and have a function for changing the duration
 
 # [L-02] Blacklisted users can't withdraw their tokens
-If a user get's blacklisted they may not be able to withdraw their collateral
+Tokens like USDT has a blacklisting feature. So, if a user get's blacklisted they may not be able to withdraw their collateral
 https://github.com/code-423n4/2024-05-predy/blob/a9246db5f874a91fb71c296aac6a66902289306a/src/libraries/logic/SupplyLogic.sol#L90
 ## Recommendation
 Have a claiming mechanism for the users instead of pushing the funds
@@ -14,8 +14,12 @@ Have a claiming mechanism for the users instead of pushing the funds
 https://github.com/code-423n4/2024-05-predy/blob/a9246db5f874a91fb71c296aac6a66902289306a/src/PriceFeed.sol#L48
 It is a known issue from [PYTH](https://docs.pyth.network/price-feeds/best-practices#price-availability) that having a stale price will revert by default in solidity
 > Integrators should be careful to avoid accidentally using a stale price. The Pyth SDKs guard against this failure mode by incorporating a staleness check by default. Querying the current price will fail if too much time has elapsed since the last update. The SDKs expose this failure condition in an idiomatic way: for example, the Rust SDK may return None, and our Solidity SDK may revert the transaction.
+
+Since Preddy uses getPriceNoOlderThan which automatically reverts when not updated within the stale duration that is 300 sec. 
+But 300 sec is enough for a arbitrager or a bot to manipulate the price (which was seen in recent Levana Finance)
+And as pointed out by PYTH in [here](https://docs.pyth.network/price-feeds/api-reference/evm/get-price-no-older-than) calling `updatePriceFeeds` will solve this problem.
 ## Recommendation
-Make sure it is well known through documentation
+Add `updatePricefeeds` from PYTH
 
 # [L-04] Empty Constructor
 Constructors should not be left empty or uninvoked .
