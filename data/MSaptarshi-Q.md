@@ -10,6 +10,13 @@ https://github.com/code-423n4/2024-05-predy/blob/a9246db5f874a91fb71c296aac6a669
 ## Recommendation
 Have a claiming mechanism for the users instead of pushing the funds
 
+# [L-03] Pyth Oracle Stale Price
+https://github.com/code-423n4/2024-05-predy/blob/a9246db5f874a91fb71c296aac6a66902289306a/src/PriceFeed.sol#L48
+It is a known issue from [PYTH](https://docs.pyth.network/price-feeds/best-practices#price-availability) that having a stale price will revert by default in solidity
+> Integrators should be careful to avoid accidentally using a stale price. The Pyth SDKs guard against this failure mode by incorporating a staleness check by default. Querying the current price will fail if too much time has elapsed since the last update. The SDKs expose this failure condition in an idiomatic way: for example, the Rust SDK may return None, and our Solidity SDK may revert the transaction.
+## Recommendation
+Make sure it is well known through documentation
+
 # [C-01] Admin related functions missing events
 Centralised/Admin related functions should always emit events for transparency purposes through out the protocol
 https://github.com/code-423n4/2024-05-predy/blob/a9246db5f874a91fb71c296aac6a66902289306a/src/base/BaseMarketUpgradable.sol#L128
