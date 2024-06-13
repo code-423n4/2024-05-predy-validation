@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "air_0x",
+  "risk": "2",
+  "title": " `SpotMarket::_execSell` gives ERC20 token allowances to `settlementParams.contractAddress` but doesn't remove allowances when `settlementParams.contractAddress` is updated",
+  "issueId": 455,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/455"
+}
