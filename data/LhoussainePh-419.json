@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "LhoussainePh",
+  "risk": "2",
+  "title": " Unsafe downcasts can lead to errors",
+  "issueId": 419,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/419"
+}
