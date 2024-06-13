@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "Satyam_Sharma",
+  "risk": "3",
+  "title": "InterestRateModel.calculateInterestRate is wrongly implemented as per the docs.",
+  "issueId": 404,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/404"
+}
