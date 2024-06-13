@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "crypticdefense",
+  "risk": "3",
+  "title": "Malicious pool owner (NOT TRUSTED) can force liquidate safe positions",
+  "issueId": 487,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/487"
+}
