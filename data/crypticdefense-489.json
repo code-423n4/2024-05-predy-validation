@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "crypticdefense",
+  "risk": "3",
+  "title": "Tick ranges are rebalanced despite being in-range, but there is no swap to rebalance the liquidity of the new range, causing pairs to have an incorrect amount of liquidity for the new tick range",
+  "issueId": 489,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/489"
+}
