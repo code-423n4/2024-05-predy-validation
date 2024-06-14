@@ -290,7 +290,7 @@ This way there is no division before multiplication, which can result in a loss 
 
 ### L-06 `recipient` can be `address(0)` in `updateRecepient`
 
-**description** `updateRecepient` function responsible for update the recepient address , but if the vault owner set `recipient` to `address(0)` by mistak this causing the protocol may  never transfers margin. 
+**description** `updateRecepient` function responsible for update the recipient address , but if the vault owner set `recipient` to `address(0)` by mistak this causing the protocol may  never transfers margin. 
 ```solidity
   /**
      * @notice Updates the recipient. If the position is liquidated, the remaining margin is sent to the recipient.
@@ -515,22 +515,7 @@ If all arguments are strings and or bytes, `bytes.concat()` should be used inste
     );
 ```
 
-### L-11 Missing access control in `updatePriceOracle` function & make the price feed
-
-**description** The `updatePriceOracle` is respons to update the price feed and that should no access to any body .
-
-```solidity
-    function updatePriceOracle(DataType.PairStatus storage _pairStatus, address _priceOracle) external {
-        //@audit-M missing access control
-        _pairStatus.priceFeed = _priceOracle;
-
-        emit PriceOracleUpdated(_pairStatus.id, _priceOracle);
-    }
-```
-
-**Recommandation** Add a modifier  `onlypoolOwner` to this function .
-
-### L-12 The Consctructor not disable
+### L-11 The Consctructor not disable
 
 **description** The `initialize` function is respons to initialze the contract , and we add the `initializer` modifier to make sure it will initialize only one time. but we have the constructor not disable so that break the process of using `initialize` function with `initializer` modifier.
 
