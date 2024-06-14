@@ -4,6 +4,26 @@
 
 ## [L-] Staker may lose the amount with less values 
 
+##
+
+## [L-] Risk of Permanent Token Loss Due to Address Blocklisting in USDC, USDT 
+
+In Predy, if tokens such as USDC or USDT are used as supply tokens, and a lender's address is added to a blocklist after they have supplied tokens to the pool, there is a risk that the lender could permanently lose access to their tokens. This is because certain tokens have a contract-level admin-controlled address blocklist, which prevents transfers to and from addresses on the blocklist. If the lender's address is blocklisted, it would be unable to withdraw or transfer their tokens from the pool, resulting in a potential loss of those assets.
+
+
+```solidity
+FILE: 2024-05-predy/src/libraries/logic
+/SupplyLogic.sol
+
+ ERC20(_pool.token).safeTransfer(msg.sender, finalWithdrawalAmount);
+
+```
+https://github.com/code-423n4/2024-05-predy/blob/a9246db5f874a91fb71c296aac6a66902289306a/src/libraries/logic/SupplyLogic.sol#L90C8-L90C76
+
+### Recommended Mitigation
+- Create an admin-controlled override function that can be used to manually transfer tokens from a blocklisted address to a safe address. 
+
+- Implement an emergency withdrawal function that allows users to withdraw their tokens to a different address if their original address gets blocklisted.
 
 
 ##
