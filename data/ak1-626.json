@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "ak1",
+  "risk": "2",
+  "title": "SettlementCallbackLib : `execSettlement` will not send fee to the `predyPool` when `baseAmountDelta` is negative",
+  "issueId": 626,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/626"
+}
