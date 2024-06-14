@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "Nyx",
+  "risk": "2",
+  "title": "Vaults can not be liquidated if the vault recipient gets blacklisted",
+  "issueId": 519,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/519"
+}
