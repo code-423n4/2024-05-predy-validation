@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "Eeyore",
+  "risk": "3",
+  "title": "The missing IRM parameters check in the `registerPair()` function allows for the instant draining of all funds from all pairs, as the creator's revenue is accounted for before the debt is paid out.",
+  "issueId": 593,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/593"
+}
