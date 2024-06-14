@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "Shubham",
+  "risk": "3",
+  "title": "Attacker can modify position (hedge or close) of any user ",
+  "issueId": 555,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/555"
+}
