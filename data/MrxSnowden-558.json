@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "MrxSnowden",
+  "risk": "3",
+  "title": "Approval Race Condition in UniswapSettlement Contract can lead to funds get stuck",
+  "issueId": 558,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/558"
+}
