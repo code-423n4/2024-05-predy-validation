@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "la-arana-inteligente",
+  "risk": "3",
+  "title": "Unchecked Signature Validation in PerpOrderV3Lib.resolve poses risk of Unauthorized Actions(Systemic risk)",
+  "issueId": 540,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/540"
+}
