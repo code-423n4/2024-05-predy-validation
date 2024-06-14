@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "0xSurya_Alpha",
+  "risk": "3",
+  "title": "[H-01] Uncontrolled Access in initialize() function leads to Frontrunning Attack and Admin Takeover in `PredyPool.sol`",
+  "issueId": 579,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/579"
+}
