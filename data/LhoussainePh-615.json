@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "LhoussainePh",
+  "risk": "3",
+  "title": "Missing access control in external `AddPairLogic::updatePriceOracle` function",
+  "issueId": 615,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/615"
+}
