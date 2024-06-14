@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "Eeyore",
+  "risk": "2",
+  "title": "Calls to Chainlink oracles don't check for stale prices.",
+  "issueId": 591,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/591"
+}
