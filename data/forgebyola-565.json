@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "forgebyola",
+  "risk": "3",
+  "title": "Malicious user can make profits by falsifying the priceFeed of a token pair.",
+  "issueId": 565,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/565"
+}
