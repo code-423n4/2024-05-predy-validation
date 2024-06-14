@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "Eeyore",
+  "risk": "3",
+  "title": "Registration of a pair with malicious price feed can lead to extraction of funds from other pairs.",
+  "issueId": 594,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/594"
+}
