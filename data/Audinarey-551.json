@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "Audinarey",
+  "risk": "3",
+  "title": "Squart positions are rebalanced into a wrong range due to rounding error in tick calculation causing the position to earn less fees ",
+  "issueId": 551,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/551"
+}
