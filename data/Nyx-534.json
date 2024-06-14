@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "Nyx",
+  "risk": "3",
+  "title": "Losses are not taken from the liquidator when the remaining margin is negative",
+  "issueId": 534,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/534"
+}
