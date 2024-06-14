@@ -232,3 +232,58 @@ The `swapExactIn` and `swapExactOut` functions in UniswapSettlement.sol interact
 Consider using a more hardcoded reasonable value, or allowing users to pass the value in in the originating calls.
  
 ***
+
+## 9. Consider also checking for min-max prices on chainlink pricefeed
+
+Links to affected code *
+
+https://github.com/code-423n4/2024-05-predy/blob/a9246db5f874a91fb71c296aac6a66902289306a/src/PriceFeed.sol#L46
+
+### Impact
+Chainlink aggregators have a built-in circuit breaker if the price of an asset goes outside of a predetermined price band.
+The result is that if an asset experiences a huge drop in value (i.e. LUNA crash) the price of the oracle will continue to return the minPrice instead of the actual price of the asset.
+
+***
+
+ 
+## 10. Redundant check in `getAssetFee` and `getDebtFee`
+
+Links to affected code *
+
+https://github.com/code-423n4/2024-05-predy/blob/a9246db5f874a91fb71c296aac6a66902289306a/src/libraries/ScaledAsset.sol#L160
+
+### Impact
+
+The `getAssetFee` and `getDebtFee` are only used in the `computeUserFee` function which selects which of the functions to call based on a check for position amount.
+
+```solidity
+    function computeUserFee(ScaledAsset.AssetStatus memory _assetStatus, ScaledAsset.UserStatus memory _userStatus)
+        internal
+        pure
+        returns (int256 interestFee)
+    {
+        if (_userStatus.positionAmount > 0) {
+            interestFee = (getAssetFee(_assetStatus, _userStatus)).toInt256();
+        } else {
+            interestFee = -(getDebtFee(_assetStatus, _userStatus)).toInt256();
+        }
+    }
+```
+These checks are then repeated again in the functions, making them redundant.
+
+```solidity
+        require(accountState.positionAmount >= 0, "S1");
+```
+and get debt fee
+
+
+```solidity
+    require(accountState.positionAmount <= 0, "S1"); 
+
+```
+
+### Recommended Mitigation Steps
+Considering that the functions are only used in the `computeUserFee` in the entire protocol, consider removing it as its just dead code.
+
+***
+
