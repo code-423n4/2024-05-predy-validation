@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "iberry",
+  "risk": "2",
+  "title": "Missing input validation in updateFeeRatio can clause too high FreeRation",
+  "issueId": 517,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/517"
+}
