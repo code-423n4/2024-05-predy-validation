@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "jolah1",
+  "risk": "2",
+  "title": "`swapExactIn()` and `swapExactOut()` cannot swap if the input asset is ETH  without risking owner's funds.",
+  "issueId": 636,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/636"
+}
