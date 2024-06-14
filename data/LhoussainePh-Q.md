@@ -230,30 +230,15 @@ The owner role is crucial for the protocol as there are a lot of functions with 
 
 ```solidity
 
-    function swapExactOut(
-        address quoteToken,
+    function swapExactIn(
         address,
+        address baseToken,
         bytes memory data,
-        uint256 amountOut,
-        uint256 amountInMaximum,
+        uint256 amountIn,
+        uint256 amountOutMinimum,
         address recipient
-    ) external override returns (uint256 amountIn) {
-        // amountOut=0
-        ERC20(quoteToken).safeTransferFrom(msg.sender, address(this), amountInMaximum);
-
-```
-```solidity
-
-    function swapExactOut(
-        address quoteToken,
-        address,
-        bytes memory data,
-        uint256 amountOut,
-        uint256 amountInMaximum,
-        address recipient
-    ) external override returns (uint256 amountIn) {
-        // amountOut=0
-        ERC20(quoteToken).safeTransferFrom(msg.sender, address(this), amountInMaximum);
+    ) external override returns (uint256 amountOut) {
+        ERC20(baseToken).safeTransferFrom(msg.sender, address(this), amountIn);
 
 ```
 
