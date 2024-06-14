@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "oxchsyston",
+  "risk": "3",
+  "title": "Increase and decrease of `liquidity` does not update the fee growth.",
+  "issueId": 550,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/550"
+}
