@@ -312,7 +312,7 @@ Take a look at https://github.com/code-423n4/2024-05-predy/blob/a9246db5f874a91f
         uint256 amountOutMinimum,
         address recipient
     ) external override returns (uint256 amountOut) {
-        ERC20(baseToken).safeTransferFrom(msg.sender, address(this), amountIn);//@audit approve below?
+        ERC20(baseToken).safeTransferFrom(msg.sender, address(this), amountIn);
         ERC20(baseToken).approve(address(_swapRouter), amountIn);
 
         amountOut = _swapRouter.exactInput(
