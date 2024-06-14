@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "ak1",
+  "risk": "2",
+  "title": "Bps.sol : The lower and upper logic is incorrect which would lead to serious calculation error during the trade",
+  "issueId": 588,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/588"
+}
