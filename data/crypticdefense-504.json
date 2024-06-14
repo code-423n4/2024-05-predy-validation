@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "crypticdefense",
+  "risk": "2",
+  "title": "`Reallocation::calculateUsableTick` will experience precision loss due to division before multiplication, creating an incorrect tick range for pairs",
+  "issueId": 504,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/504"
+}
