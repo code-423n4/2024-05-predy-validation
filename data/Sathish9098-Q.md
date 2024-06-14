@@ -2,11 +2,7 @@
 
 ##
 
-## [L-] Staker may lose the amount with less values 
-
-##
-
-## [L-] Risk of Permanent Token Loss Due to Address Blocklisting in USDC, USDT 
+## [L-1] Risk of Permanent Token Loss Due to Address Blocklisting in USDC, USDT 
 
 In Predy, if tokens such as USDC or USDT are used as supply tokens, and a lender's address is added to a blocklist after they have supplied tokens to the pool, there is a risk that the lender could permanently lose access to their tokens. This is because certain tokens have a contract-level admin-controlled address blocklist, which prevents transfers to and from addresses on the blocklist. If the lender's address is blocklisted, it would be unable to withdraw or transfer their tokens from the pool, resulting in a potential loss of those assets.
 
@@ -28,7 +24,7 @@ https://github.com/code-423n4/2024-05-predy/blob/a9246db5f874a91fb71c296aac6a669
 
 ##
 
-## [L-] Usage of `slot0` is extremely easy to manipulate
+## [L-2] Usage of `slot0` is extremely easy to manipulate
 
 ### Impact
 The function uses slot0 to obtain the current tick (tickCurrent). Since slot0 is easy to manipulate, attackers can influence the value of tickCurrent.
@@ -51,7 +47,7 @@ To make any calculation use a TWAP instead of slot0.
 
 ##
 
-## [L-] Calculating Fee Growth for Ill-Defined Tick Range Leading to Nonsensical Values
+## [L-3] Calculating Fee Growth for Ill-Defined Tick Range Leading to Nonsensical Values
 
 ### Impact
 When tickLower and tickUpper are the same, the function tries to calculate fee growth within a zero-width range.
@@ -157,7 +153,7 @@ require(tickLower < tickUpper, "Invalid tick range");
 
 ##
 
-## [L-] Revenue Discrepancies in ``poolStatus.accumulatedProtocolRevenue`` and ``poolStatus.accumulatedCreatorRevenue`` Due to Ineffective Fee Division 
+## [L-4] Revenue Discrepancies in ``poolStatus.accumulatedProtocolRevenue`` and ``poolStatus.accumulatedCreatorRevenue`` Due to Ineffective Fee Division 
 
 ### Impact 
 As the transaction volume increases, the cumulative loss due to ineffective fee division becomes significantly larger.
@@ -201,7 +197,7 @@ As per POC ensures that all calculated fees are accurately accounted for, preven
 
 ##
 
-## [L-] Chainlink's latestRoundData return stale or incorrect result
+## [L-5] Chainlink's latestRoundData return stale or incorrect result
 
 ### Impact
 
@@ -250,7 +246,7 @@ Incorporate the required checks to ensure the staleness
 
 ##
 
-## [L-] Unable to remove pairs once added in the predy system
+## [L-6] Unable to remove pairs once added in the predy system
 
  In automated market makers (AMMs), liquidity pools represent the order book. Non-performing pairs can clutter the system, making it harder for users to find active trading pairs. Without the ability to prune inactive pairs, governance mechanisms become overwhelmed with managing an ever-growing list of pairs, complicating decision-making processes.
 
@@ -266,7 +262,7 @@ function registerPair(AddPairLogic.AddPairParams memory addPairParam) external o
 
 ##
 
-## [L-] Risk of Operator Self-Assignment Hindering Protocol Updates and Security 
+## [L-7] Risk of Operator Self-Assignment Hindering Protocol Updates and Security 
 
 The function setOperator(address newOperator) external onlyOperator allows the current operator to change the operator address to a new one. 
 
@@ -295,7 +291,7 @@ https://github.com/code-423n4/2024-05-predy/blob/a9246db5f874a91fb71c296aac6a669
 
 ##
 
-## [L-]  Redundant Timestamp Comparison in pairStatus.lastUpdateTimestamp >= block.timestamp
+## [L-8]  Redundant Timestamp Comparison in pairStatus.lastUpdateTimestamp >= block.timestamp
 
 The condition if (pairStatus.lastUpdateTimestamp >= block.timestamp) is used to determine if the lastUpdateTimestamp is greater than or equal to the current block's timestamp. While the equality check (==) is valid and necessary, the greater-than check (>) is redundant and practically impossible because block.timestamp represents the current block's timestamp and cannot be in the future.
 
@@ -326,7 +322,7 @@ if (pairStatus.lastUpdateTimestamp == block.timestamp) {
 
 ##
 
-## [L-] ``onlyPoolOwner`` can intentionally sets ``feeRatio`` to 0 
+## [L-9] ``onlyPoolOwner`` can intentionally sets ``feeRatio`` to 0 
 
 The updateFeeRatio function currently lacks a check for a minimum fee ratio, which means that the pool owner can mistakenly or maliciously set the fee ratio to 0. This can have significant negative implications for the protocol,
 
@@ -359,7 +355,7 @@ require(_feeRatio >= MIN_FEE_RATIO, "FEE_TOO_LOW");
 
 ##
 
-## [L-] Inappropriate Non-Positive Check on Unsigned Integer
+## [L-10] Inappropriate Non-Positive Check on Unsigned Integer
 
 The condition if (_amount <= 0) in Solidity is inappropriate when _amount is of type uint (unsigned integer). In Solidity, uint cannot be negative, and the only non-positive value it can take is 0. Therefore, checking if _amount is less than or equal to 0 is redundant, as 0 is the only possible value that could satisfy this condition.
 
@@ -374,7 +370,148 @@ https://github.com/code-423n4/2024-05-predy/blob/a9246db5f874a91fb71c296aac6a669
 
 ##
 
-## [L-] 
+## [L-11] Risk of Duplicate Uniswap Pools Leading to Data Redundancy and Inconsistency 
+
+### Impact
+
+- Users and smart contracts interacting with the protocol may retrieve or reference different pairIds for the same pool, leading to inconsistent behavior and potential errors in operations such as trading, liquidity provision, and fee calculations.
+
+-  This can lead to logical errors in smart contracts, incorrect data aggregation, and flawed analytics, impacting decision-making and automated processes within the protocol.
+
+The current implementation of the addPair function can allow the same Uniswap pool to be added multiple times due to the way it handles the allowedUniswapPools check and the pairId generation.
+
+- This increases the attack surface for malicious actors, who could exploit discrepancies between different instances to manipulate the protocol or extract undue benefits.
+
+### Pair ID Assignment and Increment:
+
+pairId = _global.pairsCount assigns the current pair count to pairId.
+_global.pairsCount is incremented at the end of the function.
+
+### No Check for Duplicate Pools:
+
+The function checks if pairId is less than Constants.MAX_PAIRS but does not check if the uniswapPool has already been added.
+The allowedUniswapPools[_addPairParam.uniswapPool] = true; line is executed after the pair status is stored, but there is no pre-check to prevent adding the same pool if it already exists in the allowedUniswapPools mapping.
+
+### Duplicate Addition Scenario:
+
+If a user calls addPair with the same uniswapPool multiple times, each call will assign a new pairId because _global.pairsCount is incremented after each addition.
+Since there is no check before adding to allowedUniswapPools, the same uniswapPool can be added multiple times, each with a different pairId.
+
+```soldiity
+
+function addPair(
+        GlobalDataLibrary.GlobalData storage _global,
+        mapping(address => bool) storage allowedUniswapPools,
+        AddPairParams memory _addPairParam
+    ) external returns (uint256 pairId) {
+        pairId = _global.pairsCount;
+
+        require(pairId < Constants.MAX_PAIRS, "MAXP");
+
+        IUniswapV3Pool uniswapPool = IUniswapV3Pool(_addPairParam.uniswapPool);
+
+        address stableTokenAddress = _addPairParam.quoteToken;
+
+        IUniswapV3Factory uniswapV3Factory = IUniswapV3Factory(_global.uniswapFactory);
+
+        // check the uniswap pool is registered in UniswapV3Factory
+        if (
+            uniswapV3Factory.getPool(uniswapPool.token0(), uniswapPool.token1(), uniswapPool.fee())
+                != _addPairParam.uniswapPool
+        ) {
+            revert InvalidUniswapPool();
+        }
+
+        require(uniswapPool.token0() == stableTokenAddress || uniswapPool.token1() == stableTokenAddress, "C3");
+
+        bool isQuoteZero = uniswapPool.token0() == stableTokenAddress;
+
+        _storePairStatus(
+            stableTokenAddress,
+            _global.pairs,
+            pairId,
+            isQuoteZero ? uniswapPool.token1() : uniswapPool.token0(),
+            isQuoteZero,
+            _addPairParam
+        );
+
+        allowedUniswapPools[_addPairParam.uniswapPool] = true;
+
+        _global.pairsCount++;
+
+        emit PairAdded(pairId, _addPairParam.quoteToken, _addPairParam.uniswapPool);
+    }
+
+
+```
+
+```solidity
+
+ function _storePairStatus(
+        address quoteToken,
+        mapping(uint256 => DataType.PairStatus) storage _pairs,
+        uint256 _pairId,
+        address _tokenAddress,
+        bool _isQuoteZero,
+        AddPairParams memory _addPairParam
+    ) internal {
+        validateRiskParams(_addPairParam.assetRiskParams);
+        validateFeeRatio(_addPairParam.fee);
+
+        require(_pairs[_pairId].id == 0, "AAA");
+
+        _pairs[_pairId] = DataType.PairStatus(
+            _pairId,
+            quoteToken,
+            _addPairParam.poolOwner,
+            Perp.AssetPoolStatus(
+                quoteToken,
+                deploySupplyToken(quoteToken),
+                ScaledAsset.createAssetStatus(),
+                _addPairParam.quoteIrmParams,
+                0,
+                0
+            ),
+            Perp.AssetPoolStatus(
+                _tokenAddress,
+                deploySupplyToken(_tokenAddress),
+                ScaledAsset.createAssetStatus(),
+                _addPairParam.baseIrmParams,
+                0,
+                0
+            ),
+            _addPairParam.assetRiskParams,
+            Perp.createAssetStatus(
+                _addPairParam.uniswapPool,
+                -_addPairParam.assetRiskParams.rangeSize,
+                _addPairParam.assetRiskParams.rangeSize
+            ),
+            _addPairParam.priceFeed,
+            _isQuoteZero,
+            _addPairParam.allowlistEnabled,
+            _addPairParam.fee,
+            block.timestamp
+        );
+
+        emit AssetRiskParamsUpdated(_pairId, _addPairParam.assetRiskParams);
+        emit IRMParamsUpdated(_pairId, _addPairParam.quoteIrmParams, _addPairParam.baseIrmParams);
+    }
+
+```
+https://github.com/code-423n4/2024-05-predy/blob/a9246db5f874a91fb71c296aac6a66902289306a/src/libraries/logic/AddPairLogic.sol#L53-L94
+
+### Recommended Mitigation
+Add require check to ensure pool already allowed or not in addPair() function
+
+```
+require(!allowedUniswapPools[_addPairParam.uniswapPool] , "Pool already created");
+
+```
+
+
+
+
+
 
 
 
