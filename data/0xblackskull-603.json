@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "0xblackskull",
+  "risk": "2",
+  "title": "Inability to Disable allowedUniswapPools Once Enabled",
+  "issueId": 603,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/603"
+}
