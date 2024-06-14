@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "lydia_m_t",
+  "risk": "2",
+  "title": "Potential underflow in `calculateSlippageTolerance` function",
+  "issueId": 628,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/628"
+}
