@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "lydia_m_t",
+  "risk": "2",
+  "title": "Division before multiplication in `price` calculation makes it susceptible to potential precision loss",
+  "issueId": 613,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/613"
+}
