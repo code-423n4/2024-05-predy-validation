@@ -1,0 +1,8 @@
+{
+  "contest": 383,
+  "handle": "Kaysoft",
+  "risk": "3",
+  "title": "Attacker can update two different prices to Pyth oracle to exploit the `executeTrade(...)` function of GammaTradeMarketWrapper.sol",
+  "issueId": 681,
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/681"
+}
