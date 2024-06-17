@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Interactions with AMMs do not use deadlines for operations",
   "issueId": 432,
-  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/432"
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/432",
+  "validatedIssueId": 154,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-predy-findings/issues/154"
 }
