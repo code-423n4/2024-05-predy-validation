@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Risk of Failing Liquidation Due to Blacklisted Recipient",
   "issueId": 479,
-  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/479"
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/479",
+  "validatedIssueId": 140,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-predy-findings/issues/140"
 }
