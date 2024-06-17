@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Reversion in getSqrtPrice Function Due to Inability to Retrieve WBTC/USD Price Data from Pyth Oracle on Optimism and Base Chains",
   "issueId": 623,
-  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/623"
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/623",
+  "validatedIssueId": 97,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-predy-findings/issues/97"
 }
