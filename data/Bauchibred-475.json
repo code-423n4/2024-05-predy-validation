@@ -4,5 +4,7 @@
   "risk": "2",
   "title": " `PriceFeed#getSqrtPrice()` incorrectly integrates with the Pyth oracle due to only considering expo == `-8` as valid prices",
   "issueId": 475,
-  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/475"
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/475",
+  "validatedIssueId": 54,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-predy-findings/issues/54"
 }
