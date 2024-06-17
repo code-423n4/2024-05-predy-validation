@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Lack of Stale Data Check in `getSqrtPrice` Function Can Lead to Incorrect Price Calculations",
   "issueId": 41,
-  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/41"
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/41",
+  "validatedIssueId": 246,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-predy-findings/issues/246"
 }
