@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "ChainlinkAdapterOracle will return the bad price for asset if it hits minAnswer",
   "issueId": 668,
-  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/668"
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/668",
+  "validatedIssueId": 78,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-predy-findings/issues/78"
 }
