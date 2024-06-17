@@ -4,5 +4,7 @@
   "risk": "3",
   "title": "callUniswapObserve may return incorrect price for negative ticks cause it doesn't round up for negative ticks",
   "issueId": 259,
-  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/259"
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/259",
+  "validatedIssueId": 204,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-predy-findings/issues/204"
 }
