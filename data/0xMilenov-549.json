@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Liquidation issues caused by blacklisted recipients",
   "issueId": 549,
-  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/549"
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/549",
+  "validatedIssueId": 124,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-predy-findings/issues/124"
 }
