@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Risk of Incorrect Asset Pricing by Oracle Datafeed in Case of Underlying Aggregator Reaching `minAnswer`",
   "issueId": 254,
-  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/254"
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/254",
+  "validatedIssueId": 205,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-predy-findings/issues/205"
 }
