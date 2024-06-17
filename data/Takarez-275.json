@@ -4,5 +4,7 @@
   "risk": "3",
   "title": "It Will Be Close To Impossible To Liquidate User ",
   "issueId": 275,
-  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/275"
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/275",
+  "validatedIssueId": 201,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-predy-findings/issues/201"
 }
