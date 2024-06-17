@@ -4,5 +4,7 @@
   "risk": "3",
   "title": "Manipulation via `slot0`",
   "issueId": 286,
-  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/286"
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/286",
+  "validatedIssueId": 198,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-predy-findings/issues/198"
 }
