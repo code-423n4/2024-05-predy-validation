@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "No grace time for traders when L2 sequencers come online after being down, making them prone to liquidations",
   "issueId": 466,
-  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/466"
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/466",
+  "validatedIssueId": 56,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-predy-findings/issues/56"
 }
