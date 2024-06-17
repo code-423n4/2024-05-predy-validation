@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "A malicious filler can prevent trades in markets inheriting from `BaseMarketUpgradable`",
   "issueId": 305,
-  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/305"
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/305",
+  "validatedIssueId": 63,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-predy-findings/issues/63"
 }
