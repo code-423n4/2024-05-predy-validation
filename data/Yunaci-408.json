@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Using `block.timestamp` for swap deadline offers no protection",
   "issueId": 408,
-  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/408"
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/408",
+  "validatedIssueId": 161,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-predy-findings/issues/161"
 }
