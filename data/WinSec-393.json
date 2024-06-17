@@ -4,5 +4,7 @@
   "risk": "3",
   "title": "Trader can avoid Liquidation of unhealthy position by entering a blacklist",
   "issueId": 393,
-  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/393"
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/393",
+  "validatedIssueId": 166,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-predy-findings/issues/166"
 }
