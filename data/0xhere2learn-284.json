@@ -4,5 +4,7 @@
   "risk": "3",
   "title": "Users Can Avoid Liquidation by Updating Recipient to a Blacklisted Address",
   "issueId": 284,
-  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/284"
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/284",
+  "validatedIssueId": 199,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-predy-findings/issues/199"
 }
