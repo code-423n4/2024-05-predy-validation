@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "`UniHelper#getSqrtTWAP()` would return the wrong prices for negative tick deltas since it doesn't round down for them",
   "issueId": 117,
-  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/117"
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/117",
+  "validatedIssueId": 233,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-predy-findings/issues/233"
 }
