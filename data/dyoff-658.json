@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Chainlink Price Feed Lacks Stale Checks",
   "issueId": 658,
-  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/658"
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/658",
+  "validatedIssueId": 83,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-predy-findings/issues/83"
 }
