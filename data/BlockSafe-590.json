@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Incorrect calculation of decayedSlippageTorelance",
   "issueId": 590,
-  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/590"
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/590",
+  "validatedIssueId": 50,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-predy-findings/issues/50"
 }
