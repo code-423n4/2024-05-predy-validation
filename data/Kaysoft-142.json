@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Pyth.getPriceNoOlderThan(...) transaction may fail if `pyth.updatePriceFeeds{ value: fee }(priceUpdate)` is not called. ",
   "issueId": 142,
-  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/142"
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/142",
+  "validatedIssueId": 227,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-predy-findings/issues/227"
 }
