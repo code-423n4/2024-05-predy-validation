@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Missing deadlines in swap functions",
   "issueId": 556,
-  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/556"
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/556",
+  "validatedIssueId": 123,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-predy-findings/issues/123"
 }
