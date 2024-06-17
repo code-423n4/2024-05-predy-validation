@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Aggregator of chainlink orcale will return wrong price if asste hits minimum circuit",
   "issueId": 682,
-  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/682"
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/682",
+  "validatedIssueId": 75,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-predy-findings/issues/75"
 }
