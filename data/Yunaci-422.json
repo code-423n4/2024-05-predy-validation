@@ -4,5 +4,7 @@
   "risk": "3",
   "title": "Liquidity manipulation is possible when trading",
   "issueId": 422,
-  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/422"
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/422",
+  "validatedIssueId": 157,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-predy-findings/issues/157"
 }
