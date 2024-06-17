@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Protocol could lose funds if a trader gets blacklisted and liquidation fails",
   "issueId": 481,
-  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/481"
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/481",
+  "validatedIssueId": 138,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-predy-findings/issues/138"
 }
