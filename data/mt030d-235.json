@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Lack of price confidence verification in Pyth oracle data",
   "issueId": 235,
-  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/235"
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/235",
+  "validatedIssueId": 214,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-predy-findings/issues/214"
 }
