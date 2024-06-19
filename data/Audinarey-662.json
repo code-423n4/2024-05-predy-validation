@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Missing check for sequencer downtime in PriceFeed contract",
   "issueId": 662,
-  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/662"
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/662",
+  "validatedIssueId": 266,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-predy-findings/issues/266"
 }
