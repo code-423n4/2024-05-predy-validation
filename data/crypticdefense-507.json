@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Malicious user can create positions that can never be liquidated, breaking protocol invariant",
   "issueId": 507,
-  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/507"
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/507",
+  "validatedIssueId": 275,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-predy-findings/issues/275"
 }
