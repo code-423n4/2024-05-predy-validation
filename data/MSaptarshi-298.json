@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Use of slot 0 is easy to manipulate",
   "issueId": 298,
-  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/298"
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/298",
+  "validatedIssueId": 285,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-predy-findings/issues/285"
 }
