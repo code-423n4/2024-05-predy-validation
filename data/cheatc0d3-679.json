@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "No Sequencer Status Check in Price Feed Contract on Arbitrum L2",
   "issueId": 679,
-  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/679"
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/679",
+  "validatedIssueId": 264,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-predy-findings/issues/264"
 }
