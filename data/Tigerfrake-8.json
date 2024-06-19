@@ -4,5 +4,7 @@
   "risk": "2",
   "title": "Use of `slot0()` to get `currentSqrtPrice` can lead to price manipulation",
   "issueId": 8,
-  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/8"
+  "issueUrl": "https://github.com/code-423n4/2024-05-predy-validation/issues/8",
+  "validatedIssueId": 301,
+  "validatedIssueUrl": "https://github.com/code-423n4/2024-05-predy-findings/issues/301"
 }
